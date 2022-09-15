@@ -1,15 +1,7 @@
 {
   "replace": false,
-
   "values": [
-    "minecraft:ocean",
-    "minecraft:deep_ocean",
-    "minecraft:lukewarm_ocean",
-    "minecraft:deep_lukewarm_ocean",
-    "minecraft:deep_cold_ocean",
-    "minecraft:cold_ocean",
-    "minecraft:warm_ocean",
-    "minecraft:deep_warm_ocean",
-    "minecraft:swamp"
+    "#minecraft:is_ocean",
+    "#minecraft:is_deep_ocean"
   ]
 }
