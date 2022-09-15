@@ -1,0 +1,16 @@
+{
+  "name": "phenomena:structure_medieval_boat",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+
+      "weight": 1,
+      "element": {
+        "location": "phenomena:structure_medieval_boat",
+        "processors": "phenomena:randomize_stonebrick",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

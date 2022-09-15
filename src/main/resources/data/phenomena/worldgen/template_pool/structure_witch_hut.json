@@ -1,0 +1,17 @@
+{
+  "name": "phenomena:structure_witch_hut",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+
+      "weight": 1,
+      "element": {
+        //TODO how to remove this
+        "location": "phenomena:structure_witch_hut",
+        "processors": "phenomena:randomize_stonebrick",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
