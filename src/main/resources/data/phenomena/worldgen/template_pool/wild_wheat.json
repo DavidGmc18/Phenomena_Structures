@@ -1,0 +1,15 @@
+{
+  "name": "phenomena:wild_wheat",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element",
+        "location": "phenomena:wild_wheat",
+        "processors": "phenomena:random_wheat"
+      }
+    }
+  ]
+}

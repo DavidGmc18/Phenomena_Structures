@@ -1,0 +1,16 @@
+{
+"structures": [
+    {
+      "structure": "phenomena:wild_wheat",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 13259579758,
+    "spacing": 4,
+    "separation": 1,
+    "exclusion_zone": {
+    }
+  }
+}

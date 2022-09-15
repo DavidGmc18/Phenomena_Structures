@@ -6,6 +6,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+//TODO disable datapack validation for Phenomena
+//TODO disable experimental setting for Phenomena
+
 @Mod(Phenomena.MODID)
 public class Phenomena {
 

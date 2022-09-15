@@ -15,7 +15,7 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import org.jetbrains.annotations.NotNull;
-//TODO why boat dont work and fix this
+//TODO add some creatures to boat
 import java.util.Optional;
 
 public class MedievalBoat extends Structure {
