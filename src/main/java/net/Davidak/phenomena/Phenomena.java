@@ -16,8 +16,8 @@ public class Phenomena {
     public static final String MODID = "phenomena";
 
     public Phenomena() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        StructuresRegister.DEFERRED_REGISTRY_STRUCTURE.register(modEventBus);
+        StructuresRegister.DEFERRED_REGISTRY_STRUCTURE.register(bus);
     }
 }

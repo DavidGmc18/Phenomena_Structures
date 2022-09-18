@@ -1,15 +1,15 @@
 {
 "structures": [
     {
-      "structure": "phenomena:wild_wheat",
+      "structure": "phenomena:end_house",
       "weight": 1
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 13259579758,
-    "spacing": 4,
-    "separation": 1,
+    "salt": 1725959828,
+    "spacing": 32,
+    "separation": 16,
     "exclusion_zone": {
     }
   }

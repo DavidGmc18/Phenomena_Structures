@@ -13,9 +13,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "${mod_version}"
+version = "2.0.1-1.19.2" //TODO change version every time
 group = 'net.Davidak.phenomena' // https://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'phenomena'
+archivesBaseName = 'Phenomena'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 

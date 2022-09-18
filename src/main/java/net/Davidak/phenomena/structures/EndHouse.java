@@ -17,17 +17,18 @@ import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 
 import java.util.Optional;
 
-public class WildWheat extends Structure {
+//this is for wall and sand_wall
+public class EndHouse extends Structure {
 
-    public static final Codec<WildWheat> CODEC = RecordCodecBuilder.<WildWheat>mapCodec(instance ->
-            instance.group(WildWheat.settingsCodec(instance),
+    public static final Codec<EndHouse> CODEC = RecordCodecBuilder.<EndHouse>mapCodec(instance ->
+            instance.group(EndHouse.settingsCodec(instance),
                     StructureTemplatePool.CODEC.fieldOf("start_pool").forGetter(structure -> structure.startPool),
                     ResourceLocation.CODEC.optionalFieldOf("start_jigsaw_name").forGetter(structure -> structure.startJigsawName),
                     Codec.intRange(0, 30).fieldOf("size").forGetter(structure -> structure.size),
                     HeightProvider.CODEC.fieldOf("start_height").forGetter(structure -> structure.startHeight),
                     Heightmap.Types.CODEC.optionalFieldOf("project_start_to_heightmap").forGetter(structure -> structure.projectStartToHeightmap),
                     Codec.intRange(1, 128).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter)
-            ).apply(instance, WildWheat::new)).codec();
+            ).apply(instance, EndHouse::new)).codec();
 
     private final Holder<StructureTemplatePool> startPool;
     private final Optional<ResourceLocation> startJigsawName;
@@ -36,13 +37,13 @@ public class WildWheat extends Structure {
     private final Optional<Heightmap.Types> projectStartToHeightmap;
     private final int maxDistanceFromCenter;
 
-    public WildWheat(StructureSettings config,
-                     Holder<StructureTemplatePool> startPool,
-                     Optional<ResourceLocation> startJigsawName,
-                     int size,
-                     HeightProvider startHeight,
-                     Optional<Heightmap.Types> projectStartToHeightmap,
-                     int maxDistanceFromCenter)
+    public EndHouse(StructureSettings config,
+                    Holder<StructureTemplatePool> startPool,
+                    Optional<ResourceLocation> startJigsawName,
+                    int size,
+                    HeightProvider startHeight,
+                    Optional<Heightmap.Types> projectStartToHeightmap,
+                    int maxDistanceFromCenter)
     {
         super(config);
         this.startPool = startPool;
@@ -61,13 +62,13 @@ public class WildWheat extends Structure {
                 chunkpos.getMinBlockZ(),
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 context.heightAccessor(),
-                context.randomState()) < 150;
+                context.randomState()) < 256;
     }
-
+    //TODO loot tables
     @Override
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
 
-       if (!WildWheat.extraSpawningChecks(context)) {
+       if (!EndHouse.extraSpawningChecks(context)) {
             return Optional.empty();
         }
 
@@ -91,7 +92,5 @@ public class WildWheat extends Structure {
     }
 
     @Override
-    public StructureType<?> type() {
-        return StructuresRegister.WILD_WHEAT.get();
-    }
+    public StructureType<?> type() {return StructuresRegister.END_HOUSE.get();}
 }

@@ -1,14 +1,14 @@
 {
-  "name": "phenomena:wild_wheat",
+  "name": "phenomena:end_house",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "projection": "terrain_matching",
+        "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
-        "location": "phenomena:wild_wheat",
-        "processors": "phenomena:random_wheat"
+        "location": "phenomena:end_house",
+        "processors": "phenomena:none"
       }
     }
   ]
