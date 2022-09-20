@@ -2,38 +2,37 @@ package net.Davidak.phenomena.structures;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.Davidak.phenomena.HeightmapCustom;
 import net.Davidak.phenomena.StructuresRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.RandomSource;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
+import net.minecraft.world.level.LevelHeightAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.WorldGenerationContext;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
-import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 
 import java.util.Optional;
 
-//this is for wall and sand_wall
-public class EndHouse extends Structure {
+public class LushTrap extends Structure {
 
-    public static final Codec<EndHouse> CODEC = RecordCodecBuilder.<EndHouse>mapCodec(instance ->
-            instance.group(EndHouse.settingsCodec(instance),
+    public static final Codec<LushTrap> CODEC = RecordCodecBuilder.<LushTrap>mapCodec(instance ->
+            instance.group(LushTrap.settingsCodec(instance),
                     StructureTemplatePool.CODEC.fieldOf("start_pool").forGetter(structure -> structure.startPool),
                     ResourceLocation.CODEC.optionalFieldOf("start_jigsaw_name").forGetter(structure -> structure.startJigsawName),
                     Codec.intRange(0, 30).fieldOf("size").forGetter(structure -> structure.size),
                     HeightProvider.CODEC.fieldOf("start_height").forGetter(structure -> structure.startHeight),
                     Heightmap.Types.CODEC.optionalFieldOf("project_start_to_heightmap").forGetter(structure -> structure.projectStartToHeightmap),
                     Codec.intRange(1, 128).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter)
-            ).apply(instance, EndHouse::new)).codec();
+            ).apply(instance, LushTrap::new)).codec();
 
     private final Holder<StructureTemplatePool> startPool;
     private final Optional<ResourceLocation> startJigsawName;
@@ -42,7 +41,7 @@ public class EndHouse extends Structure {
     private final Optional<Heightmap.Types> projectStartToHeightmap;
     private final int maxDistanceFromCenter;
 
-    public EndHouse(StructureSettings config,
+    public LushTrap(StructureSettings config,
                     Holder<StructureTemplatePool> startPool,
                     Optional<ResourceLocation> startJigsawName,
                     int size,
@@ -59,21 +58,21 @@ public class EndHouse extends Structure {
         this.maxDistanceFromCenter = maxDistanceFromCenter;
     }
 
-    private static boolean extraSpawningChecks(GenerationContext context) {
+    private static boolean extraSpawningChecks(Structure.GenerationContext context) {
         ChunkPos chunkpos = context.chunkPos();
 
        return context.chunkGenerator().getFirstOccupiedHeight(
                 chunkpos.getMinBlockX(),
                 chunkpos.getMinBlockZ(),
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Heightmap.Types.OCEAN_FLOOR_WG,
                 context.heightAccessor(),
-                context.randomState()) < 256;
+                context.randomState()) < 64;
     }
     //TODO loot tables
     @Override
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
 
-       if (!EndHouse.extraSpawningChecks(context)) {
+       if (!LushTrap.extraSpawningChecks(context)) {
             return Optional.empty();
         }
 
@@ -97,5 +96,5 @@ public class EndHouse extends Structure {
     }
 
     @Override
-    public StructureType<?> type() {return StructuresRegister.END_HOUSE.get();}
+    public StructureType<?> type() {return StructuresRegister.LUSH_TRAP.get();}
 }

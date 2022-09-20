@@ -6,7 +6,7 @@
   "biomes": "#phenomena:has_structure/end_house_biomes",
   "step": "surface_structures",
 "start_height": {
-    "absolute": 36
+    "absolute": 56
   },
  "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "spawn_overrides": {

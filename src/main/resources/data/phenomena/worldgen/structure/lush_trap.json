@@ -1,0 +1,16 @@
+{
+  "type": "phenomena:lush_trap_structures",
+  "start_pool": "phenomena:lush_trap",
+  "size": 1,
+  "max_distance_from_center": 80,
+  "biomes": "minecraft:lush_caves",
+  "terrain_adaptation": "beard_box",
+  "step": "underground_structures",
+  "project_start_to_heightmap": "UNDERGROUND_LUSH",
+  "start_height": {
+    "absolute": 0
+  },
+  "spawn_overrides": {
+  },
+  "forge:registry_name": "phenomena:lush_trap"
+}

@@ -8,7 +8,7 @@
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
         "location": "phenomena:witch_hut",
-        "processors": "phenomena:none"
+        "processors": "minecraft:empty"
       }
     }
   ]

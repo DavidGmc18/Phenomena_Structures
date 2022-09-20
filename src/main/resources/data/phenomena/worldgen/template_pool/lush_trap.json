@@ -1,5 +1,5 @@
 {
-  "name": "phenomena:end_house",
+  "name": "phenomena:lush_trap",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -7,8 +7,8 @@
       "element": {
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
-        "location": "phenomena:end_house",
-        "processors": "minecraft:empty"
+        "location": "phenomena:lush_trap",
+        "processors": "phenomena:make_cobblestone_mossy"
       }
     }
   ]
