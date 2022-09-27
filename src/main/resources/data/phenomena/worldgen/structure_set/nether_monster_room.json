@@ -1,15 +1,15 @@
 {
 "structures": [
     {
-      "structure": "phenomena:lush_trap",
+      "structure": "phenomena:nether_monster_room",
       "weight": 1
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 1375259728,
-    "spacing": 4,
-    "separation": 3,
+    "salt": 13713582568,
+    "spacing": 8,
+    "separation": 5,
     "exclusion_zone": {
     }
   }

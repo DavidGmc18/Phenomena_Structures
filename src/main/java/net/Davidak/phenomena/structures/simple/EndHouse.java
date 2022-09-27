@@ -1,8 +1,8 @@
-package net.Davidak.phenomena.structures;
+package net.Davidak.phenomena.structures.simple;
 
-import net.Davidak.phenomena.StructuresRegister;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.Davidak.phenomena.structures.StructuresPH;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -12,23 +12,22 @@ import net.minecraft.world.level.levelgen.WorldGenerationContext;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
-import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
-import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 
 import java.util.Optional;
 
-public class WitchHut extends Structure{
-    public static final Codec<WitchHut> CODEC = RecordCodecBuilder.<WitchHut>mapCodec(instance ->
-            instance.group(WitchHut.settingsCodec(instance),
+//this is for wall and sand_wall
+public class EndHouse extends Structure {
+    public static final Codec<EndHouse> CODEC = RecordCodecBuilder.<EndHouse>mapCodec(instance ->
+            instance.group(EndHouse.settingsCodec(instance),
                     StructureTemplatePool.CODEC.fieldOf("start_pool").forGetter(structure -> structure.startPool),
                     ResourceLocation.CODEC.optionalFieldOf("start_jigsaw_name").forGetter(structure -> structure.startJigsawName),
                     Codec.intRange(0, 30).fieldOf("size").forGetter(structure -> structure.size),
                     HeightProvider.CODEC.fieldOf("start_height").forGetter(structure -> structure.startHeight),
                     Heightmap.Types.CODEC.optionalFieldOf("project_start_to_heightmap").forGetter(structure -> structure.projectStartToHeightmap),
                     Codec.intRange(1, 128).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter)
-            ).apply(instance, WitchHut::new)).codec();
+            ).apply(instance, EndHouse::new)).codec();
 
     private final Holder<StructureTemplatePool> startPool;
     private final Optional<ResourceLocation> startJigsawName;
@@ -37,7 +36,7 @@ public class WitchHut extends Structure{
     private final Optional<Heightmap.Types> projectStartToHeightmap;
     private final int maxDistanceFromCenter;
 
-    public WitchHut(Structure.StructureSettings config,
+    public EndHouse(StructureSettings config,
                     Holder<StructureTemplatePool> startPool,
                     Optional<ResourceLocation> startJigsawName,
                     int size,
@@ -54,23 +53,22 @@ public class WitchHut extends Structure{
         this.maxDistanceFromCenter = maxDistanceFromCenter;
     }
 
-    private static boolean extraSpawningChecks(Structure.GenerationContext context) {
+    private static boolean extraSpawningChecks(GenerationContext context) {
         ChunkPos chunkpos = context.chunkPos();
 
-        return context.chunkGenerator().getFirstOccupiedHeight(
+       return context.chunkGenerator().getFirstOccupiedHeight(
                 chunkpos.getMinBlockX(),
                 chunkpos.getMinBlockZ(),
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 context.heightAccessor(),
-                context.randomState()) < 88;
+                context.randomState()) < 256;
     }
-
+    //TODO loot tables
     @Override
-    public Optional<Structure.GenerationStub> findGenerationPoint(Structure.GenerationContext context) {
+    public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
 
-       if (!WitchHut.extraSpawningChecks(context)) {
+       if (!EndHouse.extraSpawningChecks(context)) {
             return Optional.empty();
-
         }
 
        int startY = this.startHeight.sample(context.random(), new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
@@ -78,7 +76,7 @@ public class WitchHut extends Structure{
         ChunkPos chunkPos = context.chunkPos();
         BlockPos blockPos = new BlockPos(chunkPos.getMinBlockX(), startY, chunkPos.getMinBlockZ());
 
-        Optional<Structure.GenerationStub> structurePiecesGenerator =
+        Optional<GenerationStub> structurePiecesGenerator =
                 JigsawPlacement.addPieces(
                         context,
                         this.startPool,
@@ -93,7 +91,5 @@ public class WitchHut extends Structure{
     }
 
     @Override
-    public StructureType<?> type() {
-        return StructuresRegister.WITCH_HUT.get();
-    }
+    public StructureType<?> type() {return StructuresPH.END_HOUSE.get();}
 }

@@ -1,8 +1,8 @@
-package net.Davidak.phenomena.structures;
+package net.Davidak.phenomena.structures.simple;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.Davidak.phenomena.StructuresRegister;
+import net.Davidak.phenomena.structures.StructuresPH;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -92,6 +92,6 @@ public class Wall extends Structure {
 
     @Override
     public StructureType<?> type() {
-        return StructuresRegister.WALL.get();
+        return StructuresPH.WALL.get();
     }
 }

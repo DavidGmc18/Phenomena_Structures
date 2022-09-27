@@ -1,8 +1,8 @@
-package net.Davidak.phenomena.structures;
+package net.Davidak.phenomena.structures.simple;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.Davidak.phenomena.StructuresRegister;
+import net.Davidak.phenomena.structures.StructuresPH;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -14,7 +14,6 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import org.jetbrains.annotations.NotNull;
 //TODO add some creatures to boat
 import java.util.Optional;
 
@@ -93,6 +92,6 @@ public class MedievalBoat extends Structure {
 
     @Override
     public StructureType<?> type() {
-        return StructuresRegister.MEDIEVAL_BOAT.get();
+        return StructuresPH.MEDIEVAL_BOAT.get();
     }
 }

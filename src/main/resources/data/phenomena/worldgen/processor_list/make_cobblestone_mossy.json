@@ -2,7 +2,7 @@
   "processors": [
     {
       "processor_type": "minecraft:rule",
-
+//TODO fix wall not connect correctly
       "rules": [
         {
           "input_predicate": {
