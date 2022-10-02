@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-//TODO add some creatures to boat
+//TODO add some creatures to boat and loot tables
 import java.util.Optional;
 
 public class MedievalBoat extends Structure {
