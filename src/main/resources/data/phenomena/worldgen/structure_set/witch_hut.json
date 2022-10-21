@@ -8,8 +8,8 @@
   "placement": {
     "type": "minecraft:random_spread",
     "salt": 19243456781,
-    "spacing": 16,
-    "separation": 6,
+    "spacing": 2,//16
+    "separation": 1,//6
     "exclusion_zone": {
       "chunk_count": 6,
       "other_set": "minecraft:swamp_huts"

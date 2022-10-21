@@ -1,6 +1,5 @@
 package net.Davidak.phenomena;
 
-import net.Davidak.phenomena.structures.StructuresPH;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -18,7 +17,5 @@ public class Phenomena {
 
     public Phenomena() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        StructuresPH.DEFERRED_REGISTRY_STRUCTURE.register(bus);
     }
 }
