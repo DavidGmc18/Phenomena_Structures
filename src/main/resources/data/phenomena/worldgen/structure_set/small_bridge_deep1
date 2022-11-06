@@ -1,0 +1,16 @@
+{
+"structures": [
+    {
+      "structure": "phenomena:small_bridge_deep1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1725959633,
+    "spacing": 32,
+    "separation": 16,
+    "exclusion_zone": {
+    }
+  }
+}
