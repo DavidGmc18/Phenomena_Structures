@@ -1,4 +1,4 @@
-{
+{ //TODO randomization
   "type": "minecraft:jigsaw",
   "start_pool": "phenomena:end_house",
   "size": 1,

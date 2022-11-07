@@ -1,4 +1,4 @@
-{ //TODO structure needs some build upgrades
+{ //TODO randomize loot and gold blocks
   "type": "minecraft:jigsaw",
   "start_pool": "phenomena:nether_monster_room",
   "size": 1,

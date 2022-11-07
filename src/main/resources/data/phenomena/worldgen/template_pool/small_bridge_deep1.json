@@ -1,5 +1,5 @@
 {
-  "name": "phenomena:nether_monster_room",
+  "name": "phenomena:small_bridge_deep1",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -7,7 +7,7 @@
       "element": {
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
-        "location": "phenomena:nether_monster_room",
+        "location": "phenomena:small_bridge_deep1",
         "processors": "minecraft:empty"
       }
     }
