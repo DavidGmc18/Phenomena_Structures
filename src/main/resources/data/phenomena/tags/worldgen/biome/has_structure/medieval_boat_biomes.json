@@ -1,8 +1,10 @@
 {
   "replace": false,
   "values": [
-    //TODO in frozen ocean it stuck in ice (not good)
-    "#minecraft:is_ocean",
-    "#minecraft:is_deep_ocean"
+    "minecraft:warm_ocean",
+    "minecraft:lukewarm_ocean",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:ocean",
+    "minecraft:deep_ocean"
   ]
 }

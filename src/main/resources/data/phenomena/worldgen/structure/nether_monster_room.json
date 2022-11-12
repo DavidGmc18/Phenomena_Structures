@@ -1,4 +1,4 @@
-{ //TODO randomize loot and gold blocks
+{
   "type": "minecraft:jigsaw",
   "start_pool": "phenomena:nether_monster_room",
   "size": 1,
@@ -7,7 +7,13 @@
   "step": "underground_structures",
   "terrain_adaptation": "none",
   "start_height": {
-    "absolute": 8 //TODO make height random (it seems easy but according to me it is not, until you want to make structure 30 times(but still some problems))
+    "type": "uniform",
+    "min_inclusive": {
+      "absolute": 6
+    },
+    "max_inclusive": {
+      "absolute": 20
+    }
   },
   "use_expansion_hack": false,
   "spawn_overrides": {
