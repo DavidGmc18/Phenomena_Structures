@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "phenomena:watchtower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 172495230,
+    "spacing": 32,
+    "separation": 16,
+    "exclusion_zone": {
+    }
+  }
+}
