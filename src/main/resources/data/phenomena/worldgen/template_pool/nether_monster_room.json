@@ -8,8 +8,7 @@
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
         "location": "phenomena:nether_monster_room",
-        "processors": "minecraft:empty"
-      }
+        "processors": "phenomena:gold_randomizer_nether"      }
     }
   ]
 }
