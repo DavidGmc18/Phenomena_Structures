@@ -8,9 +8,9 @@
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": false,
   "start_height": {
-    "absolute": -2
+    "absolute": -1
   },
-  "project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "spawn_overrides": {
   }
 }
