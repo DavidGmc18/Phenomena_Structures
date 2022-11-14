@@ -11,6 +11,8 @@
     "spacing": 32,
     "separation": 16,
     "exclusion_zone": {
+      "chunk_count": 6,
+      "other_set": "phenomena:small_bridge_deep"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "phenomena:small_bridge_deep1",
+  "name": "phenomena:small_sandstone_bridge",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -7,7 +7,7 @@
       "element": {
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element",
-        "location": "phenomena:small_bridge_deep1",
+        "location": "phenomena:small_bridge_sand",
         "processors": "minecraft:empty"
       }
     }
