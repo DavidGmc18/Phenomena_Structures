@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 //TODO disable datapack validation for Phenomena
 //TODO disable experimental setting for Phenomena
 //TODO make it only server side(only if possible), dont forget mods.toml
+//TODO better loot for structures
 
 @Mod(Phenomena.MODID)
 public class Phenomena {

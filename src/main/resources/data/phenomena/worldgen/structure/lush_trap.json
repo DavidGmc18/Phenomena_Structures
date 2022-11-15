@@ -1,4 +1,4 @@
-{
+{ //TODO better terrain blend/generation
   "type": "minecraft:jigsaw",
   "start_pool": "phenomena:lush_trap",
   "size": 2,

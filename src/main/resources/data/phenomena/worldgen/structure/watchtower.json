@@ -1,4 +1,4 @@
-{
+{ //TODO better terrain blend
   "type": "minecraft:jigsaw",
   "start_pool": "phenomena:watchtower",
   "size": 1,

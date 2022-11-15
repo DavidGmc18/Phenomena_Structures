@@ -8,7 +8,7 @@
   "placement": {
     "type": "minecraft:random_spread",
     "salt": 193495230,
-    "spacing": 32,
+    "spacing": 36,
     "separation": 16,
     "exclusion_zone": {
       "chunk_count": 6,

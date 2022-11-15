@@ -1,4 +1,4 @@
-{
+{ //TODO needs pirates(pillagers with skin of pirate)
   "type": "minecraft:jigsaw",
   "start_pool": "phenomena:medieval_boat",
   "size": 1,
