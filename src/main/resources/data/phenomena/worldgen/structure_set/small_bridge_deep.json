@@ -8,11 +8,12 @@
   "placement": {
     "type": "minecraft:random_spread",
     "salt": 1725959633,
-    "spacing": 40,
+    "spacing": 64,
     "separation": 1,
+    "frequency": 0.5,
     "exclusion_zone": {
       "chunk_count": 6,
-      "other_set": "phenomena:small_bridge"
+      "other_set": "phenomena:watchtower"
     }
   }
 }

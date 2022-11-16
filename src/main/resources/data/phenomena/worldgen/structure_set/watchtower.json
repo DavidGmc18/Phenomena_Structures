@@ -8,11 +8,12 @@
   "placement": {
     "type": "minecraft:random_spread",
     "salt": 193495230,
-    "spacing": 36,
-    "separation": 16,
+    "spacing": 96,
+    "separation": 32,
+    "frequency": 0.5,
     "exclusion_zone": {
-      "chunk_count": 6,
-      "other_set": "phenomena:small_bridge_deep"
+      "chunk_count": 16,
+      "other_set": "minecraft:pillager_outposts"
     }
   }
 }

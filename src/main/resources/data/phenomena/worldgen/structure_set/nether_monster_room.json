@@ -10,6 +10,7 @@
     "salt": 13713582568,
     "spacing": 8,
     "separation": 4,
+    "frequency": 0.6,
     "exclusion_zone": {
     }
   }
