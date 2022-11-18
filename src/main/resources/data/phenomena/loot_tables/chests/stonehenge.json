@@ -108,6 +108,7 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "weight": 20,
           "name": "minecraft:iron_boots",
           "functions": [
             {
@@ -122,6 +123,11 @@
               "function": "minecraft:enchant_randomly"
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 60,
+          "name": "minecraft:bone_meal"
         }
       ]
     }
