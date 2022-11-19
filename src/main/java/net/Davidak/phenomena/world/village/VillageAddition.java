@@ -74,6 +74,8 @@ public class VillageAddition {
         // Adds our piece to all village houses pool
         // Note, the resourcelocation is getting the pool files from the data folder. Not assets folder.
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/plains/houses"),
+                "phenomena:village/plains/guildhouse", 5);
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/plains/houses"),
                 "phenomena:village/plains/campfire", 5);
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/savanna/houses"),
                 "phenomena:village/savana/campfire", 5);
