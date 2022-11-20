@@ -1,9 +1,9 @@
-{
+{ //TODO need better generation
   "name": "phenomena:village/campsite/path",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 20,
+      "weight": 100,
       "element": {
         "location": "phenomena:village/campsite/path/path2x5",
         "processors": "minecraft:empty",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "weight": 20,
+      "weight": 100,
       "element": {
         "location": "phenomena:village/campsite/path/path3x5",
         "processors": "minecraft:empty",
