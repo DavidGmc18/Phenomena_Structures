@@ -12,7 +12,7 @@
     "separation": 12,
     "frequency": 0.5,
     "exclusion_zone": {
-      "chunk_count": 6,
+      "chunk_count": 10,
       "other_set": "minecraft:swamp_huts"
     }
   }

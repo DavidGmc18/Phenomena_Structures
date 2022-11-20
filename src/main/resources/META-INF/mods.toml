@@ -4,6 +4,7 @@ license="All rights reserved"
 
 [[mods]] #mandatory
 modId="phenomena" #mandatory
+logoFile="PhenomenaLogo.png"
 version="${file.jarVersion}" #mandatory
 displayName="Phenomena Structures" #mandatory
 credits="Thanks for this mod goes to Java!"
