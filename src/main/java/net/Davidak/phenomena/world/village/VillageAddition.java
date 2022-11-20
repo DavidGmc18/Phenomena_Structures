@@ -72,15 +72,22 @@ public class VillageAddition {
         Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess().registry(Registry.PROCESSOR_LIST_REGISTRY).orElseThrow();
 
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/plains/houses"),
-                "phenomena:village/plains/campfire", 5);
+                "phenomena:village/plains/campfire", 4);
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/savanna/houses"),
-                "phenomena:village/savana/campfire", 5);
+                "phenomena:village/savana/campfire", 4);
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/taiga/houses"),
-                "phenomena:village/taiga/campfire", 5);
+                "phenomena:village/taiga/campfire", 4);
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/snowy/houses"),
-                "phenomena:village/snowy/campfire", 5);
+                "phenomena:village/snowy/campfire", 4);
 
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/taiga/houses"),
+                "phenomena:village/taiga/guildhouse_taiga", 5);
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/desert/houses"),
+                "phenomena:village/desert/guildhouse_desert", 5);
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/plains/houses"),
                 "phenomena:village/plains/guildhouse", 5);
+
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/plains/houses"),
+                "phenomena:village/plains/oak_pillar", 3);
     }
 }
