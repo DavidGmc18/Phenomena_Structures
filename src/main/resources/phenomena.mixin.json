@@ -4,8 +4,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "phenomena.refmap.json",
   "mixins": [
-    "WorldGenRegionAccessor",
-    "NoBasaltInStructures"
+//    "WorldGenRegionAccessor",
+//    "NoBasaltInStructures"
   ],
   "client": [
   ],
