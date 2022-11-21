@@ -26,14 +26,14 @@ public class NoBasaltInStructures {
             at = @At(value = "HEAD"),
             cancellable = true
     )
-    private static void repurposedstructures_noBasaltColumnsInStructures(LevelAccessor levelAccessor, int seaLevel, BlockPos.MutableBlockPos mutableBlockPos, CallbackInfoReturnable<Boolean> cir) {
+    private static void phenomena_noBasaltColumnsInStructures(LevelAccessor levelAccessor, int seaLevel, BlockPos.MutableBlockPos mutableBlockPos, CallbackInfoReturnable<Boolean> cir) {
         if(!(levelAccessor instanceof WorldGenRegion)) {
             return;
         }
 
         SectionPos sectionPos = SectionPos.of(mutableBlockPos);
         if (!levelAccessor.getChunk(sectionPos.x(), sectionPos.z()).getStatus().isOrAfter(ChunkStatus.STRUCTURE_REFERENCES)) {
-            Phenomena.LOGGER.warn("Repurposed Structures: Detected a mod with a broken basalt columns configuredfeature that is trying to place blocks outside the 3x3 safe chunk area for features. Find the broken mod and report to them to fix the placement of their basalt columns feature.");
+            Phenomena.LOGGER.warn("Phenomena: Detected a mod with a broken basalt columns configuredfeature that is trying to place blocks outside the 3x3 safe chunk area for features. Find the broken mod and report to them to fix the placement of their basalt columns feature.");
             return;
         }
 
