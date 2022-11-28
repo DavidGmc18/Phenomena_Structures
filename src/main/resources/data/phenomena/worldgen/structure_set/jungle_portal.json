@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "phenomena:jungle_portal",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 175095233,
+    "spacing": 64,
+    "separation": 1,
+    "frequency": 0.5,
+    "exclusion_zone": {
+      "chunk_count": 8,
+      "other_set": "phenomena:jungle_portal"
+    }
+  }
+}
