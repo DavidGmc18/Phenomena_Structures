@@ -8,9 +8,9 @@ logoFile="PhenomenaLogo.png"
 version="${file.jarVersion}" #mandatory
 displayName="Phenomena Structures" #mandatory
 credits="Thanks for this mod goes to Java!"
-authors="Davidak(davidgmc18)" #optional
+authors="Mckeksik(MckeksikYTB) and Davidak(davidgmc18)" #optional
 description='''
-Adding structures!!!
+Adding various structures to your world. Including Nether and End!!!
 '''
 
 # makes sure our mod does not be attempted to be ran on older version of Minecraft and explodes
