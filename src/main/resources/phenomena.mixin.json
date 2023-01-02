@@ -1,16 +1,16 @@
 {
-  "required": true,
-  "package": "net.Davidak.phenomena.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "refmap": "phenomena.refmap.json",
-  "mixins": [
+//  "required": true,
+//  "package": "net.Davidak.phenomena.mixin",
+//  "compatibilityLevel": "JAVA_17",
+//  "refmap": "phenomena.refmap.json",
+//  "mixins": [
 //    "WorldGenRegionAccessor",
 //    "NoBasaltInStructures"
-  ],
-  "client": [
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "minVersion": "0.8"
+//  ],
+//  "client": [
+//  ],
+//  "injectors": {
+//    "defaultRequire": 1
+//  },
+//  "minVersion": "0.8"
 }

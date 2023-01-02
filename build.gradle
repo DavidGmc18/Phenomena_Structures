@@ -1,19 +1,26 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
+        maven {
+            url = 'https://maven.minecraftforge.net'
+            //name = 'sponge'
+            //url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
         jcenter()
         mavenCentral()
     }
+
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        //classpath 'org.spongepowered:mixingradle:0.7.+'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+//apply plugin: 'org.spongepowered.mixin'
 
-version = "2.1.4-1.19.2" //TODO change version every time
+version = "2.1.5-1.19.3" //TODO change version every time
 group = 'net.Davidak.phenomena' // https://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Phenomena'
 
@@ -31,9 +38,9 @@ minecraft {
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Needed to make other mods with mixins be able to run in you development environment
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            args "-mixin.config=phenomena.mixin.json"
+            //property 'mixin.env.remapRefMap', 'true'
+            //property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            //args "-mixin.config=phenomena.mixin.json"
 
             mods { phenomena { source sourceSets.main } }
         }
@@ -44,8 +51,8 @@ minecraft {
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Needed to make other mods with mixins be able to run in you development environment
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            //property 'mixin.env.remapRefMap', 'true'
+            //property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods { phenomena {  source sourceSets.main } }
         }
@@ -56,7 +63,10 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.19.2-43.1.7'
+    minecraft 'net.minecraftforge:forge:1.19.3-44.0.1'
+
+    //annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
@@ -67,16 +77,46 @@ jar {
 
     manifest {
         attributes([
-                "Specification-Title": "phenomena",
-                "Specification-Vendor": "Davidak",
-                "Specification-Version": "1",
-                "Implementation-Title": project.name,
-                "Implementation-Version": project.version,
-                "Implementation-Vendor" :"Davidak",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
-                "TweakOrder": 0,
-                "MixinConfigs": "phenomena.mixin.json"
+            "Specification-Title": "phenomena",
+            "Specification-Vendor": "Davidak",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": project.version,
+            "Implementation-Vendor" :"Davidak",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            //"TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+            //"TweakOrder": 0,
+            //"MixinConfigs": "phenomena.mixin.json",
+            //'FMLCorePluginContainsFMLMod': 'true'
         ])
+        finalizedBy 'reobfJar'
     }
+
+    task srcJar(type: Jar) {
+        archiveClassifier.set("src")
+        from sourceSets.main.allJava
+    }
+
+    task apiJar(type: Jar) {
+        archiveClassifier.set("api")
+        from sourceSets.main.allJava
+    }
+}
+
+sourceSets {
+    main {
+        //ext.refMap = "mixins.phenomena.refmap.json" //mixins.nature_arise.refmap.json
+    }
+    //mixin {
+    //    // MixinGradle Settings
+    //    add sourceSets.main, 'mixins.phenomena.refmap.json'
+    //    config 'mixins.phenomena.json'
+
+    //    debug.verbose = true
+    //    debug.export = true
+
+    //    disableTargetValidator = true
+    //    overwriteErrorLevel = 'error'
+    //    quiet
+    //}
 }

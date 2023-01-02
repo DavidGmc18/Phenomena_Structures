@@ -1,5 +1,5 @@
-//package net.Davidak.phenomena.mixin;
-//
+package net.Davidak.phenomena.mixin;
+
 //import net.minecraft.server.level.WorldGenRegion;
 //import net.minecraft.world.level.StructureManager;
 //import org.spongepowered.asm.mixin.Mixin;

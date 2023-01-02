@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[38,)" #mandatory
+loaderVersion="[44,)" #mandatory
 license="All rights reserved"
 
 [[mods]] #mandatory
@@ -17,5 +17,5 @@ Adding various structures to your world. Including Nether and End!!!
 [[dependencies.phenomena]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19, 1.20)"
+    versionRange="[1.19.3, 1.20)"
     side="SERVER"
