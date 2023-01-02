@@ -3,6 +3,7 @@ package net.Davidak.phenomena.world.village;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.structure.pools.SinglePoolElement;
@@ -19,14 +20,14 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = "phenomena")
 public class VillageAddition {
     private static final ResourceKey<StructureProcessorList> EMPTY_PROCESSOR_LIST_KEY = ResourceKey.create(
-            Registry.PROCESSOR_LIST_REGISTRY, new ResourceLocation("minecraft", "empty"));
+            Registries.f_257011_, new ResourceLocation("minecraft", "empty"));
     private static void addBuildingToPool(Registry<StructureTemplatePool> templatePoolRegistry,
                                           Registry<StructureProcessorList> processorListRegistry,
                                           ResourceLocation poolRL,
                                           String nbtPieceRL,
                                           int weight) {
 
-        Holder<StructureProcessorList> emptyProcessorList = processorListRegistry.getHolderOrThrow(EMPTY_PROCESSOR_LIST_KEY);
+        Holder<StructureProcessorList> emptyProcessorList = processorListRegistry.getHolder(EMPTY_PROCESSOR_LIST_KEY).orElseThrow();
 
         StructureTemplatePool pool = templatePoolRegistry.get(poolRL);
         if (pool == null) return;
@@ -45,8 +46,8 @@ public class VillageAddition {
 
     @SubscribeEvent
     public static void addNewVillageBuilding(final ServerAboutToStartEvent event) {
-        Registry<StructureTemplatePool> templatePoolRegistry = event.getServer().registryAccess().registry(Registry.TEMPLATE_POOL_REGISTRY).orElseThrow();
-        Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess().registry(Registry.PROCESSOR_LIST_REGISTRY).orElseThrow();
+        Registry<StructureTemplatePool> templatePoolRegistry = event.getServer().registryAccess().registry(Registries.f_256948_).orElseThrow();
+        Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess().registry(Registries.f_257011_).orElseThrow();
 
         addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft:village/plains/houses"),
                 "phenomena:village/plains/campfire", 4);
