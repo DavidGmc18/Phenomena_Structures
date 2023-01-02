@@ -20,14 +20,14 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 //apply plugin: 'org.spongepowered.mixin'
 
-version = "2.1.5-1.19.3" //TODO change version every time
+version = "2.2.0-1.19.3" //TODO change version every time
 group = 'net.Davidak.phenomena' // https://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Phenomena'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'official', version: '1.19.2'
+    mappings channel: 'official', version: '1.19.3'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
