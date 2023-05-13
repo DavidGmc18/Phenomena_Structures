@@ -20,7 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 //apply plugin: 'org.spongepowered.mixin'
 
-version = "2.2.1-1.19.4" //TODO change version every time
+version = "2.3.1-1.19.4" //TODO change version every time
 group = 'net.Davidak.phenomena' // https://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Phenomena'
 
