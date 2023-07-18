@@ -5,7 +5,7 @@ license="All rights reserved"
 [[mods]] #mandatory
 modId="phenomena" #mandatory
 logoFile="PhenomenaLogo.png"
-version="2.2.1-1.19.4" #mandatory
+version="2.3.1-1.20.1" #mandatory
 displayName="Phenomena Structures" #mandatory
 credits="Thanks for this mod goes to Java!"
 authors="Mckeksik(MckeksikYTB) and Davidak(davidgmc18)" #optional
@@ -17,5 +17,5 @@ Adding various structures to your world. Including Nether and End!!!
 [[dependencies.phenomena]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.4, 1.20)"
+    versionRange="[1.20, 1.21)"
     side="SERVER"
